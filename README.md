@@ -1,5 +1,5 @@
 # MiniProject1_ShiyueZhou
-[![CI](https://github.com/nogibjj/MiniProject1_ShiyueZhou/actions/workflows/hello.yml/badge.svg)](https://github.com/nogibjj/MiniProject1_ShiyueZhou/actions/workflows/hello.yml)
+[![CI-Python Application Test with Github Actions](https://github.com/nogibjj/MiniProject1_ShiyueZhou/actions/workflows/ci.yml/badge.svg)](https://github.com/nogibjj/MiniProject1_ShiyueZhou/actions/workflows/ci.yml)
 
 Based on the requirement of miniproject in week2, this will work on the following file/folder to develop the Python Template Sample.
 
@@ -22,4 +22,3 @@ Dev Container
 
 Github Actions  
     The directory .github/workflows is where you define your workflows for GitHub Actions.
-    
