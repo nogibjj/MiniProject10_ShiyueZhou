@@ -37,3 +37,7 @@ Based on the requirement of miniproject in week2, this will work on the followin
    - **`build`**:  
      - **`runs-on`**: This specifies the environment (runner) where the job will run. GitHub provides hosted runners, and in this case, it uses the latest version of Ubuntu (`ubuntu-latest`).  
      - **`steps`**: Each job contains a series of steps. Steps are the individual tasks performed in sequence, such as checking out code, installing dependencies, linting, and running tests.
+
+
+## Check:
+![requirements](image.png)
