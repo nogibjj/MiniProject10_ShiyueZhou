@@ -27,7 +27,7 @@ PySpark Data Processing
 ### SQL Transformation:
 - The `Spark_SQL()` function uses Spark SQL to filter and aggregate data. It creates a temporary view of the loaded data, and then uses a SQL query to filter categories with a total employment count above 10,000, while also summing up employment statistics (`Grad_employed`, `Nongrad_employed`, etc.) per major category.
 
-## 4. Output Data (Markdown) 
+## 4. Transformations & Output Data (Markdown) 
 
 ### Data Output:
 - After transforming the data with `stem_transform()`, the results are saved as a Markdown file using `pandas.DataFrame.to_markdown()`. This allows the generated data to be presented in an easily readable format.
