@@ -1,4 +1,4 @@
-# import pyspark
+import os
 from mylib.extract import extract
 from mylib.load_spark import (
     start_spark,
@@ -6,6 +6,7 @@ from mylib.load_spark import (
     load,
     load_as_pandas,
     stem_transform,
+    Spark_SQL
 )
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -25,10 +26,21 @@ def main():
     # show the new column
     df_transform.select("STEM_major").show()
 
-    # describe data
+    # Use the Spark SQL function
+    result_df = Spark_SQL(spark_df)
+
+    # Show the results
+    result_df.show()
 
     # transform as pandas dataframe
     pandas_df = load_as_pandas(df_transform)
+
+    # Automatically save df_transform as markdown
+    markdown_file_path = "df_transform.md"
+    with open(markdown_file_path, "w") as file:
+        file.write(pandas_df.to_markdown(index=False))  # Save as markdown file
+
+    print(f"Data saved as markdown at: {os.path.abspath(markdown_file_path)}")
 
     # visualization
     # Creating a bar plot for the average 'Grad_unemployment_rate' by 'STEM_major'

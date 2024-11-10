@@ -1,7 +1,7 @@
 import os
 from pyspark.sql import SparkSession
 from mylib.extract import extract
-from mylib.load_spark import load, load_as_pandas, stem_transform
+from mylib.load_spark import load, load_as_pandas, stem_transform, Spark_SQL
 
 # Initialize Spark session
 spark = SparkSession.builder.appName("test_grade_student").getOrCreate()
@@ -39,11 +39,19 @@ def test_stem_transform():
     assert stem_major_values > 0, "'STEM_major' column is empty!"
 
 
+def test_spark_sql():
+    data = load(spark, file_path)
+    result_df = Spark_SQL(data)
+    result_df.show()
+    assert result_df.count() > 0, "The result DataFrame is empty!"
+
+
 if __name__ == "__main__":
     test_extract()  # Test if the file is downloaded
     test_load()  # Test if data is loaded correctly into Spark
     test_load_as_pandas()  # Test conversion to Pandas DataFrame
     test_stem_transform()  # Test STEM transformation
+    test_spark_sql()
 
     # Stop Spark session at the end of tests
     spark.stop()
