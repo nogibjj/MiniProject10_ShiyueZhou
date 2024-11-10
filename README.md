@@ -3,7 +3,7 @@
 
 
 # Project Summary
-
+PySpark Data Processing
 ## 1. Setup
 
 ### Spark Setup:
@@ -11,6 +11,8 @@
 
 ### File Extraction:
 - The `extract()` function downloads the "grad-students.csv" file from a remote URL (GitHub), ensuring the file is saved locally.
+- Data Source: https://github.com/fivethirtyeight/data/blob/master/college-majors/grad-students.csv
+
 
 ## 2. PySpark Data Processing
 
@@ -51,7 +53,8 @@
 
 ## 8. File Saved:
 - The transformation results are saved as `df_transform.md` in Markdown format, which is generated automatically after the data transformation step.
-[Output data after transform](df_transform.md)
+- The transformed column `STEM_major` is showed in the last column of `df_transform.md`.
+- [Output data after transform](df_transform.md)
 
 ## 9. Example Visualization:
 - A bar plot displaying the average graduation unemployment rate by STEM major, which helps to analyze trends in the job market across various fields of study.
